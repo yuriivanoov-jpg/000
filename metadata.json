@@ -1,0 +1,6 @@
+{
+  "name": "Aether 2026 Design Studio",
+  "description": "An ultra-modern, interactive design studio and workspace featuring a futuristic 2026 aesthetic, glassmorphic interactive grids, and an AI-guided design companion.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

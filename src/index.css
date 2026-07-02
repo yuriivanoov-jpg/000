@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Syne", sans-serif;
+
+  /* Gentler, softer color palette - Warm Velvet Dark */
+  --color-bg: #0b0a0d; /* Warm purple-obsidian black */
+  --color-ink: #f5f2f7; /* Off-white silk */
+  --color-accent: #ff7657; /* Softer coral sunset glow instead of harsh international orange */
+  --color-accent-soft: rgba(255, 118, 87, 0.12);
+  --color-ink-faint: rgba(245, 242, 247, 0.06); /* Soft delicate borders */
+  --color-ink-medium: rgba(245, 242, 247, 0.45); /* Muted label text */
+  --color-surface: #131217; /* Soft card/panel backgrounds */
+}
+
+/* Light Theme overrides for the dynamic style variables */
+#atelier-app-root.light {
+  --color-bg: #f9f9fb; /* Clean off-white background */
+  --color-ink: #111113; /* Deep carbon rich ink */
+  --color-accent: #e55b3c; /* Sharp clear coral for perfect light mode contrast */
+  --color-accent-soft: rgba(229, 91, 60, 0.08);
+  --color-ink-faint: rgba(17, 17, 19, 0.08); /* Soft subtle dark border */
+  --color-ink-medium: rgba(17, 17, 19, 0.55); /* Muted carbon grey text */
+  --color-surface: #ffffff; /* Crisp pure white cards */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: default;
+}
+
+html, body, #root {
+  background-color: #0b0a0d; /* Matching app background */
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbars for full-stack scroll containers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(245, 242, 247, 0.1);
+  border-radius: 99px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+::selection {
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+@keyframes scanline {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+.scanline-anim {
+  animation: scanline 4s linear infinite;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(19, 18, 23, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 242, 247, 0.06);
+}
+
+/* Active buttons pulse gently */
+.glow-accent {
+  box-shadow: 0 0 16px rgba(255, 118, 87, 0.15);
+}
